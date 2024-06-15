@@ -15,6 +15,6 @@ This project is a dynamic data visualization dashboard built using Flask and Jav
 ## Motivation
 Inpired by PaulMFleming
 
-##Contact
+## Contact
 Email: [@preranayekkele@gmail.com]
 
