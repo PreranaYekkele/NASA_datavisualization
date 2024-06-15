@@ -1,0 +1,164 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Trigger the modal with a button -->
+            <button class="intro_button btn-danger btn-lg" type="button" id ="tour-button" autofocus onclick="javascript:introJs().start();">Start Tour!</button>
+            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Info</button>
+
+            <!-- Year Row Chart (Side panel)-->
+            <div id="fixed-position-box" class="col-sm-2 col-md-2">
+                <div class="chart-wrapper"> 
+                    <h2>Select a year</h2>
+                    <div class="dc-data-count dc-chart" id="row-selection">
+                        <span class="filter-count">_</span> of <span class="total-count">_</span> selected |
+                        <span>
+                             <a href='javascript:dc.filterAll();dc.redrawAll();'><font color="#33CC99">Reset All</font></a>
+                         </span>
+                     </div>
+                     <div id="dc-year-row-chart" data-step="1" data-intro="Here you can filter the data by the year. You can click on single or multiple years.
+                     For example: Clicking on '1965' will only show you the Spacewalking missions that happened in the year 1965.
+                     The other charts will change to reflect your choice."
+                     style="font-weight:normal" data-position="auto"></div>
+                </div>
+            </div>
+            <!-- end Year Row Chart (Side Panel) -->
+
+            <!-- First Row - Missions Timeline and Country Chart -->
+             <div class="col-sm-10 col-sm-offset-2" id="scrollable-position">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="chart-wrapper">
+                            <div class="chart-title">
+                                <h2>Missions Timeline</h2>
+                                <div class="dc-data-count dc-chart"></div>
+                            </div>
+                            <div class="chart-stage">
+                                <div id="grid-1-1">
+                                    <div id="dc-duration-chart" id="row-selection" data-step="2" data-intro="Here we can see the number of missions per year charted out over time.
+                                    The higher the peaks, the more missions happened in that particular year.
+                                    You can also click and drag to filter by the years.
+                                    " 
+                                    style="font-weight: normal" data-position="auto"></div>
+                                </div>
+                            </div>
+                            <div class="chart-notes">Click and drag to filter the years - <a href='javascript:dc.filterAll();dc.redrawAll();'><font color="#33CC99">  Reset</font></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="chart-wrapper">
+                            <div class="chart-title">
+                                <h2>Country</h2>
+                            </div>
+                            <div class="chart-stage">
+                                <div id='dc-missions-by-country-chart' data-step="3" data-intro="Here you can filter by the country. Useful Tip: underneath every graph there's
+                                a handy 'reset' button." style="font-weight: normal" data-position="auto"></div>
+                            </div>
+                            <div class="chart-notes">Click to select a country - <a href='javascript:dc.filterAll();dc.redrawAll();'><font color="#33CC99">  Reset</font></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <!-- end First Row -->
+
+                 <!-- Second Row - Spacewalk Durations and Space Program Charts-->
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="chart-wrapper">
+                            <div class="chart-title">
+                                <h2>Spacewalk Durations</h2>
+                            </div>
+                            <div class="chart-stage">
+                                <div id="dc-longest-spacewalk-chart" data-step="5" data-intro="Here you can see the total number of hours spent per year by astronauts
+                                and cosmanauts actually outside spaceships doing their missions." style="font-weight: normal" data-position="auto"></div>
+                            </div>
+                            <div class="chart-notes">Hover over the bars to see the total time in space for that year - <a href='javascript:dc.filterAll();dc.redrawAll();'><font color="#33CC99">  Reset</font></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="chart-wrapper">
+                            <div class="chart-title">
+                                <h2>Space Program</h2>
+                            </div>
+                            <div class="chart-stage">
+                                <div class='col-sm-6' id='dc-vehicle-chart' data-step="6" data-intro="Here you can filter by the space program. Useful Tip: You can filter by
+                                multiple graphs at the same time!" style="font-weight: normal" data-position="auto"></div>
+                            </div>
+                            <div class="chart-notes">Click to select a Space Program - <a href='javascript:dc.filterAll();dc.redrawAll();'><font color="#33CC99"> Reset</font></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <!-- end Second Row -->
+
+                 <!-- Missions Data Table -->
+                 <div class="row col-sm-12 centered  white-box">
+                     <div class="white-border">
+                         <h2>MISSIONS!!!!!</h2>
+                         <table class='table table-hover' id='dc-table-graph' data-step="7" data-intro="This is my favorite part - the details of the Spacewalking missions themselves.
+                         Here you can find out which astronauts or cosmonauts were on which mission, the purpose of the missions and much more.
+                         I recommend filtering by the years you're interested in here.... otherwise you'll be scrolling for a while!" style="font-weight: normal" data-position="auto">
+                             <thead>
+                             <tr class='header'>
+                                 <th>EVA#</th>
+                                 <th>Country</th>
+                                 <th>Crew</th>
+                                 <th>Space Program</th>
+                                 <th>Mission</th>
+                                 <th>Date</th>
+                                 <th>Duration</th>
+                                 <th>Purpose</th>
+                             </tr>
+                             </thead>
+                         </table>
+                         <div class="info-box">
+                             <p>Data source: <a href="https://data.nasa.gov/Raw-Data/Extra-vehicular-Activity-EVA-US-and-Russia/9kcy-zwvn"
+                                                target="_blank">Extra-vehicular Activity (EVA) - US and Russia</a> </p>
+                             <p>To find similar Open Source Data from Nasa visit the <a href="https://data.nasa.gov" target="_blank"> Nasa Open Data Portal</a> </p>
+                         </div>
+                     </div>
+                 </div>
+                 <!-- end Missions Data Table -->
+             </div>
+        </div>
+    </div>
+
+    <!-- Info Modal - Opens on page load -->
+    <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-lg">    
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <img src="static/lib/images/spacelogo.png" style="max-width:250px">
+                    <h2>Nasa Extra Vehicular Activity Study</h2>
+                </div>
+                <div class="modal-body">
+                        <p>This site is a study of Spacewalks also known as Extra Vehicular Activity.</p>
+                        <p>Spacewalks are basically missions where astronauts or cosmonauts go outside 
+                            of the spaceships they are in to do different things like fix their spaceships
+                            or make upgrades to satellites etc.
+                        </p>
+                        <p>You can view and see lots of different information relating to every spacewalk 
+                            mission that has ever happened up until April 7 2015. </p>
+                        </p>
+                        <p>Don't forget to try the tour button at the top of the page to help
+                             you understand what kinds of information you can see in the various graphs
+                             on the page.
+                        </p>
+                        <p>
+                            Note: The site is best viewed on a desktop, the libraries for the graphs don't 
+                            like to work very well with resizing down to phones, so not all of the graphs can 
+                            be seen on the phone unfortunately.
+                        </p>
+                        <p>Thanks for visiting, and I hope you enjoy.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>  
+        </div>
+
+{% endblock %}

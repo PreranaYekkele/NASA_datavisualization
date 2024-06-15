@@ -1,0 +1,273 @@
+/* 
+ * My custom styles for the site 
+*/
+
+/* 
+ * Animated background 
+*/
+body.application {
+    width: 100%;
+    height: 100%;
+    margin: 0px auto;
+    background-color: #000;
+    color: #FFFFFF;
+    text-align: center;
+    background-image: url("/static/lib/images/bg5b.png"), url("/static/lib/images/stars2.png"), url("/static/lib/images/stars1.png");
+    background-position: 0px 0px, 140% 70px, 0px 0px;
+    background-repeat: no-repeat, repeat, repeat;
+    animation: animate-background linear 50s infinite;
+}
+@keyframes animate-background{
+   from { background-position: 0px 0px, 40% 70px,  0px 0px;}
+   to { background-position:  0px 0px, -5% 70px, -550px 0px;}
+}
+img.planets-box {
+    height: 20%;
+    z-index: -150;
+}
+
+/* 
+ * Navbar styles 
+ */
+.navbar-default {
+    background-color: rgba(0,0,0,0.6);
+    background-image: url("/static/lib/images/stars1.png");
+    border: none;
+    font-size: 1.25em;
+    font-weight: bold;
+}
+.navbar-default .navbar-nav>li>a {
+    color: #FFFFFF;
+}
+.navbar-default .navbar-nav>li>a:hover {
+    color: #777;
+    text-decoration: underline;
+}
+.navbar-brand>a {
+    color: #FFFFFF;
+}
+.navbar-default .navbar-nav>li>a:hover {
+    color: #FFFFFF;
+}
+.navbar-default .navbar-nav>li>a:active {
+    text-decoration: underline;
+}
+
+/*
+ * Tour button
+ */
+.btn-danger {
+    color: #fff;
+    background-color: #ea1010;
+    border-color: #6baed6;
+    border-radius: 5px;
+    margin-left: 15px;
+}
+.btn-danger:active, .btn-danger:focus {
+    color: #fff;
+    background-color: #ea1010;
+    border-color: #6baed6;
+}
+.btn-danger:hover {
+    color: #fff;
+    background-color: #ea1010;
+    border-color: transparent;
+}
+.btn-info {
+    color: #fff;
+    background-color: #6baed6;
+    border-color: #ea1010;
+    border-radius: 5px;
+    margin-left: 15px;
+}
+.btn-info:active, .btn-danger:focus {
+    color: #fff;
+    background-color: #6baed6;
+    border-color: #ea1010;
+}
+.btn-info:hover {
+    color: #fff;
+    background-color: #6baed6;
+    border-color: transparent;
+}
+
+
+/*
+ * Customize Intro.js here
+ */
+.introjs-helperLayer {
+    box-sizing: content-box;
+    position: absolute;
+    z-index: 9999998;
+    /* background-color: #FFF; */
+    background-color: transparent;
+    border: 1px solid #ea1010;
+    border-radius: 4px;
+    box-shadow: 0 2px 15px rgba(0,0,0,.4);
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+.introjs-tooltip {
+    box-sizing: content-box;
+    position: absolute;
+    visibility: visible;
+    padding: 10px;
+    background-color: rgba(0,0,0,0.6);
+    min-width: 200px;
+    max-width: 300px;
+    border-radius: 3px;
+    border: #e91010;
+    color: #fff;
+    box-shadow: 0 1px 10px rgb(234, 16, 16);
+    -webkit-transition: opacity 0.1s ease-out;
+    -moz-transition: opacity 0.1s ease-out;
+    -ms-transition: opacity 0.1s ease-out;
+    -o-transition: opacity 0.1s ease-out;
+    transition: opacity 0.1s ease-out;
+}
+.padding-top {
+    padding-top: 15px;
+}
+
+/*
+ * Space Agency Logos
+ */
+.logo-sizing {
+    width: 50%;
+}
+
+/*
+ * Content boxes
+ */
+.white-box{
+    /*background-color: rgba(255,255,255,0.5);*/
+    color: #FFFFFF;
+    margin: 10px;
+    padding-bottom: 20px;
+    text-align: center;
+
+}
+.info-box {
+    margin-top: 20px;
+    border-style: solid;
+    border-color: #000000;
+    border-width: 1px;
+    padding: 20px;
+}
+.underlined-content {
+    text-decoration: underline;
+}
+
+/*
+* Display navigation links inline
+*/
+.menu {
+    float: right;
+    margin-top: 8px;
+    padding-bottom: 50px;
+}
+.menu li {
+    display: inline;
+}
+.menu li + li {
+    margin-left: 35px;
+}
+.menu li a {
+    color: #999;
+    text-decoration: none;
+}
+
+/*
+ * make videos responsive
+*/
+iframe {
+    padding-bottom: 25px;
+    padding-top: 15px;
+}
+
+/*
+ * carousel style
+ */
+.carousel {
+    padding: 15px;
+}
+.carousel-inner {
+    position: relative;
+    width: 75%;
+    overflow: hidden;
+    margin: auto;
+}
+.carousel-caption-box {
+    width: 100%;
+    background-color: rgba(255,255,255,0.9);
+}
+.carousel-caption-box>h3 {
+    color: #000000;
+}
+.carousel-caption>h2 {
+    color: #000000;
+}
+
+/*
+ * Override keen-dashboards.css with custom style
+ */
+.chart-wrapper {
+    background: transparent;
+    border: none;
+}
+.chart-wrapper .chart-title{
+    color: #FFFFFF; !important;
+}
+.chart-wrapper .chart-notes {
+    background: transparent;
+   color: #FFFFFF; !important;
+}
+.dc-chart g.row text, .dc-chart .axis text, .dc-chart text.x-axis-label,
+.dc-chart g.dc-legend-item text, .dc-chart text.y-axis-label {
+    fill: white;
+}
+
+/*
+ * Graph styles
+ */
+.table-hover>tbody>tr:hover>td, .table-hover>tbody>tr:hover>th {
+    background-color: transparent;
+}
+#dc-year-row-chart>h2{
+    padding-bottom: 10px;
+}
+#fixed-position-box {
+    position: fixed;
+}
+@media only screen and (max-width:500px) {
+    #fixed-position-box {
+        display: none;
+    }
+}
+#dc-year-row-chart {
+    position: absolute;
+}
+#dc-year-row-chart>h2 {
+    text-align: left;
+    margin-left: 30px;
+}
+.pie-slice._0>path{
+    fill: rgb(234,16,16); !important;
+}
+.dc-legend-item rect{
+    /*fill: rgb(234,16,16);*/
+}
+div.dc-chart{
+    float: none;
+}
+
+/*
+ *  Modal Style
+ */
+.modal-content {
+    background-color: rgba(0,0,0,0.9);
+    border: 1px solid rgb(234,16,16);
+}
